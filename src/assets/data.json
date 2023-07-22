@@ -1,0 +1,113 @@
+{
+  "nodes": [
+    {
+      "data": {
+        "id": ".",
+        "label": ".",
+        "type": "basename"
+      },
+      "classes": "basename"
+    },
+    {
+      "data": {
+        "id": "main.tf",
+        "label": "main.tf",
+        "type": "file",
+        "parent": ".",
+        "parentColor": "lightgray"
+      },
+      "classes": "fname"
+    },
+    {
+      "data": {
+        "id": "output.random_name",
+        "label": "random_name",
+        "type": "output",
+        "parent": "main.tf",
+        "parentColor": "lightgray"
+      },
+      "classes": "output"
+    },
+    {
+      "data": {
+        "id": "var.max_length",
+        "label": "max_length",
+        "type": "variable",
+        "parent": "main.tf",
+        "parentColor": "lightgray"
+      },
+      "classes": "variable"
+    },
+    {
+      "data": {
+        "id": "random_integer {main.tf}",
+        "label": "random_integer",
+        "type": "resource",
+        "parent": "main.tf",
+        "parentColor": "lightgray"
+      },
+      "classes": "resource-type"
+    },
+    {
+      "data": {
+        "id": "random_integer.pet_length",
+        "label": "pet_length",
+        "type": "resource",
+        "parent": "random_integer {main.tf}",
+        "parentColor": "lightgray",
+        "change": "create"
+      },
+      "classes": "resource-name create"
+    },
+    {
+      "data": {
+        "id": "random_pet {main.tf}",
+        "label": "random_pet",
+        "type": "resource",
+        "parent": "main.tf",
+        "parentColor": "lightgray"
+      },
+      "classes": "resource-type"
+    },
+    {
+      "data": {
+        "id": "random_pet.pet",
+        "label": "pet",
+        "type": "resource",
+        "parent": "random_pet {main.tf}",
+        "parentColor": "lightgray",
+        "change": "create"
+      },
+      "classes": "resource-name create"
+    }
+  ],
+  "edges": [
+    {
+      "data": {
+        "id": "output.random_name->random_pet.pet",
+        "source": "output.random_name",
+        "target": "random_pet.pet",
+        "gradient": "#ffc107 lightgray"
+      },
+      "classes": "edge"
+    },
+    {
+      "data": {
+        "id": "random_integer.pet_length->var.max_length",
+        "source": "random_integer.pet_length",
+        "target": "var.max_length",
+        "gradient": "lightgray #1d7ada"
+      },
+      "classes": "edge"
+    },
+    {
+      "data": {
+        "id": "random_pet.pet->random_integer.pet_length",
+        "source": "random_pet.pet",
+        "target": "random_integer.pet_length",
+        "gradient": "lightgray lightgray"
+      },
+      "classes": "edge"
+    }
+  ]
+}
